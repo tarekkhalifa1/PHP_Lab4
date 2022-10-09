@@ -43,6 +43,9 @@ if ($_GET['user'] && is_numeric($_GET['user'])) {
                     <div class="col-12 text-center text-uppercase">
                         <h2 class="text-primary my-5">Welcome</h2>
                     </div>
+                    <div class="col-12 text-center mb-4">
+                    <img src="imgs/user.png" width="200" alt="">
+                </div>
                 </div>
 
                 <main class="row">
@@ -52,13 +55,13 @@ if ($_GET['user'] && is_numeric($_GET['user'])) {
                                 <div class="col-6">
                                     <div>
                                         <label for="first_name" class="form-label">First Name</label>
-                                        <input disabled type="text" name="first_name" id="first_name" class="form-control " value="<?= $user->first_name?>">
+                                        <input disabled type="text" name="first_name" id="first_name" class="form-control " value="<?= $user->first_name ?>">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div>
                                         <label for="last_name" class="form-label">Last Name</label>
-                                        <input disabled type="text" name="last_name" id="last_name" class="form-control " value="<?= $user->last_name?>">
+                                        <input disabled type="text" name="last_name" id="last_name" class="form-control " value="<?= $user->last_name ?>">
                                     </div>
                                 </div>
                             </div>
@@ -66,40 +69,35 @@ if ($_GET['user'] && is_numeric($_GET['user'])) {
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input disabled id="last_name" class="form-control " value="<?= $user->email?>">
+                                <input disabled id="last_name" class="form-control " value="<?= $user->email ?>">
                             </div>
 
                             <div class="row">
-                                <div class="mb-3 d-flex">
-                                    <label for="gender" class="form-label">Gender:</label>
-                                    <div class="form-check">
-                                        <?php 
-                                            if($user->gender == "m"){
+                                    <div class="form-check mb-3">
+                                        <?php
+                                        if ($user->gender == "m") {
                                         ?>
-                                        <label class="form-check-label" >
-                                            Male
-                                        </label>
-                                        <?php }else{ ?>
-                                        <label class="form-check-label" >
-                                            Female
-                                        </label>
-                                        <?php }?>
-                                    </div>
+                                            <label class="form-check-label">
+                                                Gender: Male
+                                            </label>
+                                        <?php } else { ?>
+                                            <label class="form-check-label">
+                                            Gender: Female
+                                            </label>
+                                        <?php } ?>
                                 </div>
                             </div>
 
                             <div class="mb-3">
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"
-                                            <?php 
-                                                if($user->recieve_emails) {
-                                                    echo "checked";
-                                                }else {
-                                                    echo "";
-                                                }
-                                            ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" <?php
+                                                                                    if ($user->recieve_emails) {
+                                                                                        echo "checked";
+                                                                                    } else {
+                                                                                        echo "";
+                                                                                    }
+                                                                                    ?>>
                                     <label class="form-check-label" for="recieve_email">
                                         Recieve E-Mails from us.
                                     </label>
@@ -108,7 +106,7 @@ if ($_GET['user'] && is_numeric($_GET['user'])) {
 
                             <div class="form-group mb-4">
                                 <a class="btn btn-outline-primary me-3" href="index.php">Back</a>
-                                <a href="edit.php?user=<?= $user->id?>">Want to update?</a>
+                                <a href="edit.php?user=<?= $user->id ?>">Want to update?</a>
                             </div>
                         </div>
                     </div>
